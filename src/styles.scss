@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~simple-keyboard/build/css/index.css";
+
+@for $i from 1 through 100 {
+    .ch-#{$i} {
+        height: #{$i}vh; 
+    }
+    .cw-#{$i} {
+        width: #{$i}vw; 
+    }
+}
+
+.bd-highlight {
+    background-color: rgba(86,61,124,0.15);
+    border: 1px solid rgba(86,61,124,0.15);
+}
+
+.simple-keyboard {
+    .hg-button {
+        max-height: 7.5vh;
+        max-width: 10vw;
+    }
+    .hg-button-numbers {
+        min-width: 20vw;
+    }
+    .hg-button-space {
+        min-width: 50vw;
+        max-width: none;
+    }
+    .hg-button-enter {
+        min-width: 20vw;
+    }
+}

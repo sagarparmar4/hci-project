@@ -1,0 +1,46 @@
+<!-- New Layout -->
+<div id="layout-container" class="d-flex bd-highlight ch-100 cw-100" [ngClass]="{
+    'flex-column': !isLandscapeMode
+}">
+    <!-- Content Area -->
+    <div id="content-area" class="d-flex flex-column" [ngClass]="{
+        'ch-60 cw-100': !isLandscapeMode,
+        'ch-100 cw-60': isLandscapeMode
+    }">
+        <!-- Information Area -->
+        <div id="information-container" class="d-flex">
+            <div id="heading-area" class="p-2 bd-highlight flex-grow-1">
+                New Layout
+            </div>
+            <div id="show-home" class="p-2 bd-highlight" routerLink="/">
+                Home
+            </div>
+            <div id="show-result" class="p-2 bd-highlight" (click)="showResults(newLayoutForm)">
+                Show Result
+            </div>
+        </div>
+        
+        <!-- Text Area -->
+        <div id="text-area" class="p-2 overflow-auto ch-60">
+            {{ sampleText }}
+        </div>
+
+        <!-- Input Area -->
+        <div id="input-area" class="p-2 ch-40">
+            <form #newLayoutForm="ngForm">
+                <div class="form-group">
+                    <label for="textarea">Entered text will be shown here:</label>
+                    <textarea class="form-control" name="textarea" rows="2" placeholder="Entered text will be shown here" disabled ngModel></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Keyboard Area -->
+    <div id="keyboard" class="p-2 bd-highlight" [ngClass]="{
+        'ch-40 cw-100': !isLandscapeMode,
+        'ch-100 cw-40': isLandscapeMode
+    }">
+        Keyboard Area
+    </div>
+</div>

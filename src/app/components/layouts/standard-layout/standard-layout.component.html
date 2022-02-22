@@ -1,0 +1,48 @@
+<!-- Standard Layout -->
+<!-- Content Area -->
+<div id="content-area" class="d-flex bd-highlight cw-100 flex-column" [ngClass]="{
+    'ch-60': !isLandscapeMode,
+    'ch-50': isLandscapeMode
+}">
+    <!-- Information Area -->
+    <div id="information-container" class="d-flex">
+        <div id="heading-area" class="p-2 bd-highlight flex-grow-1">
+            Standard Layout
+        </div>
+        <div id="show-home" class="p-2 bd-highlight" routerLink="/">
+            Home
+        </div>
+        <div id="next-layout" class="p-2 bd-highlight" (click)="nextLayout(standardLayoutForm)">
+            Next Layout
+        </div>
+    </div>
+    
+    <!-- Text Area -->
+    <div id="text-area" class="p-2 overflow-auto" [ngClass]="{
+        'ch-70': !isLandscapeMode,
+        'ch-15': isLandscapeMode
+    }">
+        {{ sampleText }}
+    </div>
+
+    <!-- Input Area -->
+    <div id="input-area" class="p-2" [ngClass]="{
+        'ch-30': !isLandscapeMode,
+        'ch-15': isLandscapeMode
+    }">
+        <form #standardLayoutForm="ngForm">
+            <div class="form-group">
+                <label for="textarea" *ngIf="!isLandscapeMode">Enter above text Here:</label>
+                <textarea class="form-control" name="textarea" rows="2" placeholder="Entered text will be shown here" [(ngModel)]="textarea" disabled></textarea>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Keyboard Area -->
+<div id="keyboard" class="p-2 bd-highlight cw-100" [ngClass]="{
+    'ch-40': !isLandscapeMode,
+    'ch-50': isLandscapeMode
+}">
+    <div class="simple-keyboard"></div>
+</div>
