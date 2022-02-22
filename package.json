@@ -1,7 +1,6 @@
 {
   "name": "hci-project",
   "version": "0.0.0",
-  "homepage" : "https://sagarparmar4.github.io/hci-project/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
