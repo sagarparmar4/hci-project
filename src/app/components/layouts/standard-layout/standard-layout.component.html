@@ -19,7 +19,7 @@
     
     <!-- Text Area -->
     <div id="text-area" class="p-2 overflow-auto" [ngClass]="{
-        'ch-70': !isLandscapeMode,
+        'ch-60 pt-4': !isLandscapeMode,
         'ch-15': isLandscapeMode
     }">
         {{ sampleText }}
@@ -27,7 +27,7 @@
 
     <!-- Input Area -->
     <div id="input-area" class="p-2" [ngClass]="{
-        'ch-30': !isLandscapeMode,
+        'ch-40 pt-4': !isLandscapeMode,
         'ch-15': isLandscapeMode
     }">
         <form #standardLayoutForm="ngForm">
@@ -45,7 +45,7 @@
 
 <!-- Keyboard Area -->
 <div id="keyboard" class="p-2 bd-highlight cw-100" [ngClass]="{
-    'ch-40 cpt-8': !isLandscapeMode,
+    'ch-40 cpt-5': !isLandscapeMode,
     'ch-50': isLandscapeMode
 }">
     <app-keyboard id="standard-layout" (onChangeAction)="onChangeAction($event)"></app-keyboard>
