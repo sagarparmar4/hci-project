@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LayoutDetails } from 'src/app/classes/layout-details';
 import { CommonService } from 'src/app/services/common.service';
+import { author, maintainers } from '../../../../package.json'
 
 @Component({
   selector: 'app-result-page',
@@ -26,6 +27,14 @@ export class ResultPageComponent implements OnInit {
     this.lname = this.commonService.lname;
     this.standardLayout = this.commonService.standardLayout;
     this.newLayout = this.commonService.newLayout;
+  }
+
+  getAuthor(): string {
+    return author.name;
+  }
+
+  getMaintainers(): string {
+    return maintainers.map(e => e.name).join(', ');;
   }
   
 }

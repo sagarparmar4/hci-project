@@ -18,6 +18,10 @@
     background-color: rgba(86,61,124,0.15);
 }
 
+.cborder-top {
+    border-top: 1px solid rgba(86, 61, 124, 0.30)
+}
+
 #standard-layout > .simple-keyboard {
     .hg-button {
         max-height: 7.5vh;

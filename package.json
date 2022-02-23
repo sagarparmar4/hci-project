@@ -1,11 +1,19 @@
 {
   "name": "hci-project",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://sagarparmar4.github.io/hci-project/",
   "author": {
     "name": "Sagar Parmar",
     "email": "sagarparmar4@gmail.com"
   },
+  "maintainers": [
+    {
+      "name": "Anamika Pandey"
+    },
+    {
+      "name": "Priya Pandey"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

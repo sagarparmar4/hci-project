@@ -15,7 +15,7 @@ export class LandingPageComponent {
   constructor(private commonService: CommonService, private router: Router) { }
 
   startExperiment(userDetails: NgForm): void {
-    if(userDetails.value.fname && userDetails.value.lname) {
+    if(userDetails.value.fname && userDetails.value.lname && userDetails.value.experimentGroup) {
       this.showError = false;
       this.commonService.createNewResult(userDetails.value.fname, userDetails.value.lname, userDetails.value.experimentGroup);
 
