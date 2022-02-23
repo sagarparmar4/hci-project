@@ -9,14 +9,16 @@
     .cw-#{$i} {
         width: #{$i}vw; 
     }
+    .cpt-#{$i} {
+        padding-top: #{$i}vh !important; 
+    }
 }
 
 .bd-highlight {
     background-color: rgba(86,61,124,0.15);
-    border: 1px solid rgba(86,61,124,0.15);
 }
 
-.simple-keyboard {
+#standard-layout > .simple-keyboard {
     .hg-button {
         max-height: 7.5vh;
         max-width: 10vw;
@@ -30,5 +32,40 @@
     }
     .hg-button-enter {
         min-width: 20vw;
+    }
+}
+
+#new-layout > .simple-keyboard {
+    @media (orientation: portrait) {
+        .hg-button {
+            max-height: 7.5vh;
+            max-width: 10vw;
+        }
+        .hg-button-numbers {
+            min-width: 20vw;
+        }
+        .hg-button-space {
+            min-width: 50vw;
+            max-width: none;
+        }
+        .hg-button-enter {
+            min-width: 20vw;
+        }
+    }
+
+    @media (orientation: landscape) {
+        .hg-button {
+            max-width: 10vw;
+        }
+        .hg-button-numbers {
+            min-width: 10vw;
+        }
+        .hg-button-space {
+            min-width: 20vw;
+            max-width: none;
+        }
+        .hg-button-enter {
+            min-width: 10vw;
+        }
     }
 }

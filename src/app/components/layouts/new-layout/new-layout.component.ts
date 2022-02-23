@@ -13,16 +13,17 @@ export class NewLayoutComponent implements OnInit {
   
   isLandscapeMode: boolean;
   orientation: ScreenOrientation = screen.orientation;
-  
-  sampleText: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-  "Mauris fermentum venenatis quam vitae tempor. " +
-  "Nam dictum risus ut scelerisque tempus. " +
-  "Aliquam iaculis turpis ac lobortis iaculis. " +
-  "Nulla gravida sem non felis egestas sodales. " +
-  "In non velit faucibus, mollis ante in, elementum orci. " +
-  "Ut ac convallis enim. " +
-  "Suspendisse eget eleifend est. " +
-  "Vivamus elementum, lectus eu placerat ullamcorper, lectus justo hendrerit neque, id pharetra massa urna id risus.";
+  textarea: string;
+
+  sampleText: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' +
+  'Mauris fermentum venenatis quam vitae tempor. ' +
+  'Nam dictum risus ut scelerisque tempus. ' +
+  'Aliquam iaculis turpis ac lobortis iaculis. ' +
+  'Nulla gravida sem non felis egestas sodales. ' +
+  'In non velit faucibus, mollis ante in, elementum orci. ' +
+  'Ut ac convallis enim. ' +
+  'Suspendisse eget eleifend est. ' +
+  'Vivamus elementum, lectus eu placerat ullamcorper, lectus justo hendrerit neque, id pharetra massa urna id risus.';
   
   constructor(private commonService: CommonService, private router: Router) { }
   
@@ -35,13 +36,19 @@ export class NewLayoutComponent implements OnInit {
   }
   
   checkLandscapeMode(): void {
-    this.isLandscapeMode = (this.orientation.type == "landscape-primary" || this.orientation.type == "landscape-secondary");
+    this.isLandscapeMode = (this.orientation.type == 'landscape-primary' || this.orientation.type == 'landscape-secondary');
   }
 
   showResults(newLayoutForm: NgForm): void {
     this.commonService.newLayout.endTime = new Date();
-    this.commonService.newLayout.accuracy = compareTwoStrings(this.sampleText, newLayoutForm.value.textarea);
+
+    let enteredText = newLayoutForm.value.textarea ? newLayoutForm.value.textarea : '';
+    this.commonService.newLayout.accuracy = compareTwoStrings(this.sampleText, enteredText);
     this.router.navigate(['result-page'], { skipLocationChange: true });
+  }
+
+  onChangeAction(event: string): void {
+    this.textarea = event;
   }
   
 }

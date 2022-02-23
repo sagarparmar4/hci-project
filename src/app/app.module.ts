@@ -10,6 +10,7 @@ import { ResultPageComponent } from './components/result-page/result-page.compon
 import { FormsModule } from '@angular/forms';
 import { NewLayoutComponent } from './components/layouts/new-layout/new-layout.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { KeyboardComponent } from './components/keyboard/keyboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     LandingPageComponent,
     StandardLayoutComponent,
     ResultPageComponent,
-    NewLayoutComponent
+    NewLayoutComponent,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,

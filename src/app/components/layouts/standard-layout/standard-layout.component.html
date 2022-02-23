@@ -32,8 +32,12 @@
     }">
         <form #standardLayoutForm="ngForm">
             <div class="form-group">
-                <label for="textarea" *ngIf="!isLandscapeMode">Enter above text Here:</label>
-                <textarea class="form-control" name="textarea" rows="2" placeholder="Entered text will be shown here" [(ngModel)]="textarea" disabled></textarea>
+                <label for="textarea" *ngIf="!isLandscapeMode">
+                    Entered text will be shown here:
+                </label>
+                <textarea class="form-control" name="textarea" rows="2" placeholder="Entered text will be shown here" 
+                    [(ngModel)]="textarea" disabled>
+                </textarea>
             </div>
         </form>
     </div>
@@ -41,8 +45,8 @@
 
 <!-- Keyboard Area -->
 <div id="keyboard" class="p-2 bd-highlight cw-100" [ngClass]="{
-    'ch-40': !isLandscapeMode,
+    'ch-40 cpt-8': !isLandscapeMode,
     'ch-50': isLandscapeMode
 }">
-    <div class="simple-keyboard"></div>
+    <app-keyboard id="standard-layout" (onChangeAction)="onChangeAction($event)"></app-keyboard>
 </div>

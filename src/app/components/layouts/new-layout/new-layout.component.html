@@ -5,7 +5,7 @@
     <!-- Content Area -->
     <div id="content-area" class="d-flex flex-column" [ngClass]="{
         'ch-60 cw-100': !isLandscapeMode,
-        'ch-100 cw-60': isLandscapeMode
+        'ch-100 cw-50': isLandscapeMode
     }">
         <!-- Information Area -->
         <div id="information-container" class="d-flex">
@@ -21,26 +21,30 @@
         </div>
         
         <!-- Text Area -->
-        <div id="text-area" class="p-2 overflow-auto ch-60">
+        <div id="text-area" class="p-2 overflow-auto ch-70">
             {{ sampleText }}
         </div>
 
         <!-- Input Area -->
-        <div id="input-area" class="p-2 ch-40">
+        <div id="input-area" class="p-2 ch-30">
             <form #newLayoutForm="ngForm">
                 <div class="form-group">
-                    <label for="textarea">Entered text will be shown here:</label>
-                    <textarea class="form-control" name="textarea" rows="2" placeholder="Entered text will be shown here" disabled ngModel></textarea>
+                    <label for="textarea" *ngIf="!isLandscapeMode">
+                        Entered text will be shown here:
+                    </label>
+                    <textarea class="form-control" name="textarea" rows="2" placeholder="Entered text will be shown here" 
+                        [(ngModel)]="textarea" disabled>
+                    </textarea>
                 </div>
             </form>
         </div>
     </div>
 
     <!-- Keyboard Area -->
-    <div id="keyboard" class="p-2 bd-highlight" [ngClass]="{
-        'ch-40 cw-100': !isLandscapeMode,
-        'ch-100 cw-40': isLandscapeMode
+    <div id="keyboard bd-highlight" class="p-2" [ngClass]="{
+        'ch-40 cw-100 cpt-8': !isLandscapeMode,
+        'ch-100 cw-50 cpt-35': isLandscapeMode
     }">
-        Keyboard Area
+        <app-keyboard id="new-layout" (onChangeAction)="onChangeAction($event)"></app-keyboard>
     </div>
 </div>
