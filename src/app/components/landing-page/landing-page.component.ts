@@ -17,8 +17,10 @@ export class LandingPageComponent {
   startExperiment(userDetails: NgForm): void {
     if(userDetails.value.fname && userDetails.value.lname) {
       this.showError = false;
-      this.commonService.createNewResult(userDetails.value.fname, userDetails.value.lname);
-      this.router.navigate(['standard-layout'],  { skipLocationChange: true });
+      this.commonService.createNewResult(userDetails.value.fname, userDetails.value.lname, userDetails.value.experimentGroup);
+
+      let url = (this.commonService.groupNumber == 1) ? 'standard-layout' : 'new-layout';
+      this.router.navigate([url],  { skipLocationChange: true });
     } else {
       this.showError = true;
     }

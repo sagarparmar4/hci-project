@@ -41,13 +41,14 @@ export class StandardLayoutComponent implements OnInit {
     this.isLandscapeMode = (this.orientation.type == 'landscape-primary' || this.orientation.type == 'landscape-secondary');
   }
   
-  nextLayout(standardLayoutForm: NgForm): void {
+  nextPage(standardLayoutForm: NgForm): void {
     this.commonService.standardLayout.endTime = new Date();
     
     let enteredText = standardLayoutForm.value.textarea ? standardLayoutForm.value.textarea : '';
     this.commonService.standardLayout.accuracy = compareTwoStrings(this.sampleText, enteredText);
     
-    this.router.navigate(['new-layout'], { skipLocationChange: true });
+    let url = (this.commonService.groupNumber == 1) ? 'new-layout' : 'result-page';
+    this.router.navigate([url], { skipLocationChange: true });
   }
   
   onChangeAction(event: string): void {
