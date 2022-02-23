@@ -18,6 +18,7 @@ export class CommonService {
     this.fname = fname;
     this.lname = lname;
     this.groupNumber = groupNumber;
+    
     this.standardLayout = new LayoutDetails();;
     this.newLayout = new LayoutDetails();
   }
